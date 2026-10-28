@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17141c">
+  <meta name="description" content="Escucha Radio La Mega Yungueña 102.1 FM en vivo desde Coroico, Nor Yungas, La Paz, Bolivia.">
+  <title>Radio La Mega Yungueña 102.1 FM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img
+        src="assets/radio-la-mega-logo.png"
+        alt="Logo de Radio La Mega Yungueña"
+        class="logo"
+      >
+      <div>
+        <h1>Radio La Mega Yungueña</h1>
+        <p class="location">🔴 Señal en directo · Coroico, Bolivia</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="radio-player" id="escuchar">
+      <div class="player-heading">
+        <div class="play-button-wrap">
+          <button
+            id="playButton"
+            class="play-button"
+            type="button"
+            aria-label="Reproducir radio"
+          >
+            <span id="playIcon">▶</span>
+          </button>
+        </div>
+
+        <div class="player-info">
+          <h2 id="playerTitle">Dale play y vive La Mega</h2>
+          <p id="playerMessage">Listos para conectarte con nuestra señal</p>
+          <div class="equalizer" aria-hidden="true">
+            ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪
+          </div>
+        </div>
+
+        <div class="on-air">
+          <span class="live-dot"></span>
+          EN VIVO
+        </div>
+      </div>
+
+      <div class="volume-control">
+        <label for="volumeSlider">VOLUMEN</label>
+
+        <button
+          id="muteButton"
+          class="mute-button"
+          type="button"
+          aria-label="Silenciar o activar el sonido"
+        >
+          🔊 Silenciar
+        </button>
+
+        <input
+          id="volumeSlider"
+          type="range"
+          min="0"
+          max="100"
+          value="70"
+          step="1"
+          aria-label="Nivel de volumen"
+        >
+
+        <span id="volumeValue">70%</span>
+      </div>
+
+      <audio id="radioAudio" preload="none" playsinline>
+        <source
+          src="https://stream.zeno.fm/rbuzobunanauv"
+          type="audio/mpeg"
+        >
+        Tu navegador no admite la reproducción de audio.
+      </audio>
+
+      <p class="player-hint">
+        Si la señal tarda en iniciar, vuelve a pulsar reproducir
+        o revisa tu conexión a internet.
+      </p>
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <div class="feature-icon">♫</div>
+        <div>
+          <h3>Buena música</h3>
+          <p>Ritmos para cada momento</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">♥</div>
+        <div>
+          <h3>Cerca de ti</h3>
+          <p>La voz de nuestra comunidad</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">◎</div>
+        <div>
+          <h3>Desde Coroico</h3>
+          <p>Nor Yungas para el mundo</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact-section">
+      <h2>Conéctate con La Mega</h2>
+      <p>Estamos cerca de nuestra gente en los Yungas y en todo el mundo.</p>
+      <a
+        href="https://wa.me/59173214664"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-link"
+      >
+        Escríbenos por WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      © <span id="currentYear"></span> Radio La Mega Yungueña 102.1 FM.
+      Coroico, La Paz, Bolivia.
+    </p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("radioAudio");
+      const playButton = document.getElementById("playButton");
+      const playIcon = document.getElementById("playIcon");
+      const playerTitle = document.getElementById("playerTitle");
+      const playerMessage = document.getElementById("playerMessage");
+      const slider = document.getElementById("volumeSlider");
+      const volumeValue = document.getElementById("volumeValue");
+      const muteButton = document.getElementById("muteButton");
+      const currentYear = document.getElementById("currentYear");
+
+      let previousVolume = 0.7;
+
+      audio.volume = 0.7;
+      currentYear.textContent = new Date().getFullYear();
+
+      function updateVolumeDisplay() {
+        const volume = Math.round(audio.volume * 100);
+        volumeValue.textContent = volume + "%";
+        slider.value = volume;
+
+        if (audio.muted || audio.volume === 0) {
+          muteButton.textContent = "🔇 Activar sonido";
+        } else {
+          muteButton.textContent = "🔊 Silenciar";
+        }
+      }
+
+      playButton.addEventListener("click", async function () {
+        if (audio.paused) {
+          playerTitle.textContent = "Conectando con La Mega...";
+          playerMessage.textContent = "Esperando la señal de radio";
+
+          try {
+            await audio.play();
+          } catch (error) {
+            playerTitle.textContent = "No se pudo conectar";
+            playerMessage.textContent =
+              "Revisa tu conexión e inténtalo nuevamente.";
+          }
+        } else {
+          audio.pause();
+        }
+      });
+
+      audio.addEventListener("playing", function () {
+        playIcon.textContent = "Ⅱ";
+        playButton.setAttribute("aria-label", "Pausar radio");
+        playerTitle.textContent = "¡Estás escuchando La Mega!";
+        playerMessage.textContent = "Radio La Mega Yungueña 102.1 FM";
+      });
+
+      audio.addEventListener("pause", function () {
+        playIcon.textContent = "▶";
+        playButton.setAttribute("aria-label", "Reproducir radio");
+        playerTitle.textContent = "Dale play y vive La Mega";
+        playerMessage.textContent = "Pulsa reproducir para escuchar";
+      });
+
+      audio.addEventListener("waiting", function () {
+        playerMessage.textContent = "Cargando la señal de radio...";
+      });
+
+      audio.addEventListener("error", function () {
+        playerTitle.textContent = "Señal temporalmente no disponible";
+        playerMessage.textContent =
+          "Intenta reproducir nuevamente en unos segundos.";
+      });
+
+      slider.addEventListener("input", function () {
+        audio.volume = Number(slider.value) / 100;
+        audio.muted = false;
+
+        if (audio.volume > 0) {
+          previousVolume = audio.volume;
+        }
+
+        updateVolumeDisplay();
+      });
+
+      muteButton.addEventListener("click", function () {
+        if (audio.muted || audio.volume === 0) {
+          audio.muted = false;
+
+          if (audio.volume === 0) {
+            audio.volume = previousVolume || 0.7;
+          }
+        } else {
+          previousVolume = audio.volume;
+          audio.muted = true;
+        }
+
+        updateVolumeDisplay();
+      });
+
+      updateVolumeDisplay();
+    });
+  </script>
+</body>
+</html>
+
+
