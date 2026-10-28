@@ -7,237 +7,328 @@
   <meta name="theme-color" content="#17141c">
   <meta name="description" content="Escucha Radio La Mega Yungueña 102.1 FM en vivo desde Coroico, Nor Yungas, La Paz, Bolivia.">
   <title>Radio La Mega Yungueña 102.1 FM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
+  <div class="topline">
+    <span class="live-dot"></span>
+    RADIO LA MEGA YUNGUEÑA
+    <span class="topline-divider">•</span>
+    COROICO, BOLIVIA
+    <span class="topline-divider">•</span>
+    102.1 FM
+  </div>
+
   <header class="site-header">
-    <div class="brand">
-      <img
-        src="assets/radio-la-mega-logo.png"
-        alt="Logo de Radio La Mega Yungueña"
-        class="logo"
-      >
-      <div>
-        <h1>Radio La Mega Yungueña</h1>
-        <p class="location">🔴 Señal en directo · Coroico, Bolivia</p>
-      </div>
-    </div>
+    <a class="brand" href="#inicio" aria-label="Radio La Mega Yungueña, inicio">
+      <img src="assets/radio-la-mega-logo.png" alt="Logo de Radio La Mega Yungueña">
+      <span class="brand-copy">
+        <strong>LA MEGA YUNGUEÑA</strong>
+        <small>102.1 FM · COROICO</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <nav class="nav" aria-label="Menú principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#escuchar">Escuchar</a>
+      <a href="#programas">Programas</a>
+      <a href="#comunidad">Comunidad</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <a class="header-live" href="#escuchar">
+      <span class="live-dot"></span>
+      ESCÚCHANOS EN VIVO
+    </a>
   </header>
 
   <main>
-    <section class="radio-player" id="escuchar">
-      <div class="player-heading">
-        <div class="play-button-wrap">
-          <button
-            id="playButton"
-            class="play-button"
-            type="button"
-            aria-label="Reproducir radio"
-          >
-            <span id="playIcon">▶</span>
-          </button>
+    <section class="hero" id="inicio">
+      <div class="hero-bg-shape shape-one"></div>
+      <div class="hero-bg-shape shape-two"></div>
+
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="live-dot"></span>
+          TU RADIO, TU GENTE, TU MEGA
         </div>
 
-        <div class="player-info">
-          <h2 id="playerTitle">Dale play y vive La Mega</h2>
-          <p id="playerMessage">Listos para conectarte con nuestra señal</p>
-          <div class="equalizer" aria-hidden="true">
-            ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪
+        <h1>LA MEGA<br><span>YUNGUEÑA</span></h1>
+
+        <div class="hero-frequency">
+          102.1 FM <small>COROICO</small>
+        </div>
+
+        <p class="hero-description">
+          La música que te acompaña, la voz de nuestra gente y toda la energía
+          de los Yungas. Sintonízanos desde Coroico para Bolivia y el mundo.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-dark" href="#escuchar">
+            <span class="play-symbol">▶</span> ESCUCHAR EN VIVO
+          </a>
+          <a class="button button-outline" href="#programas">CONOCE LA RADIO ↘</a>
+        </div>
+
+        <p class="hero-note">
+          <span class="live-dot"></span>
+          TRANSMITIENDO DESDE NOR YUNGAS, LA PAZ
+        </p>
+      </div>
+
+      <div class="hero-art">
+        <div class="art-ring ring-a"></div>
+        <div class="art-ring ring-b"></div>
+
+        <img
+          class="hero-poster"
+          src="assets/radio-la-mega-logo.png"
+          alt="Radio La Mega Yungueña 102.1 FM"
+        >
+
+        <div class="floating-tag">
+          <div class="tag-icon">♫</div>
+          <div>
+            <strong>La música nunca para</strong>
+            <small>¡Vive la energía de La Mega!</small>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#escuchar">DESCUBRE LA MEGA <span>↓</span></a>
+    </section>
+
+    <section class="player-section section-pad" id="escuchar">
+      <div class="section-heading">
+        <div class="section-kicker">♫ SINTONIZA TU EMISORA</div>
+        <h2>Estamos contigo <span>en vivo</span></h2>
+        <p>Donde estés, lleva el sonido de los Yungas contigo.</p>
+      </div>
+
+      <div class="player-card">
+        <div class="player-brand">
+          <img class="mini-logo-img" src="assets/radio-la-mega-logo.png" alt="">
+          <div>
+            <strong>Radio La Mega Yungueña</strong>
+            <small><span class="live-dot"></span> 102.1 FM · Coroico, Bolivia</small>
           </div>
         </div>
 
-        <div class="on-air">
-          <span class="live-dot"></span>
-          EN VIVO
+        <div class="player-controls">
+          <button id="playButton" class="play-button" type="button" aria-label="Reproducir radio">
+            <span id="playIcon">▶</span>
+          </button>
+
+          <div class="player-status">
+            <strong id="playerTitle">Dale play y vive La Mega</strong>
+            <small id="playerMessage">Listos para conectarte con nuestra señal</small>
+
+            <div class="sound-bars" id="soundBars" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <div class="on-air"><span class="live-dot"></span> EN VIVO</div>
         </div>
+
+        <div class="volume-control">
+          <label for="volumeSlider">VOLUMEN</label>
+          <button id="muteButton" class="mute-button" type="button">🔊 Silenciar</button>
+          <input id="volumeSlider" type="range" min="0" max="100" value="70" step="1" aria-label="Nivel de volumen">
+          <span id="volumeValue">70%</span>
+        </div>
+
+        <audio id="radioAudio" preload="none" playsinline>
+          <source src="https://stream.zeno.fm/rbuzobunanauv" type="audio/mpeg">
+          Tu navegador no admite la reproducción de audio.
+        </audio>
+
+        <p class="player-hint">
+          Si la señal tarda en iniciar, vuelve a pulsar reproducir o revisa tu conexión a internet.
+        </p>
       </div>
 
-      <div class="volume-control">
-        <label for="volumeSlider">VOLUMEN</label>
+      <div class="listen-perks">
+        <div><span>♫</span><strong>Buena música</strong><small>Ritmos para cada momento</small></div>
+        <div><span>♥</span><strong>Cerca de ti</strong><small>La voz de nuestra comunidad</small></div>
+        <div><span>◎</span><strong>Desde Coroico</strong><small>Nor Yungas para el mundo</small></div>
+      </div>
+    </section>
 
-        <button
-          id="muteButton"
-          class="mute-button"
-          type="button"
-          aria-label="Silenciar o activar el sonido"
-        >
-          🔊 Silenciar
-        </button>
-
-        <input
-          id="volumeSlider"
-          type="range"
-          min="0"
-          max="100"
-          value="70"
-          step="1"
-          aria-label="Nivel de volumen"
-        >
-
-        <span id="volumeValue">70%</span>
+    <section class="programs-section section-pad" id="programas">
+      <div class="section-heading heading-row">
+        <div>
+          <div class="section-kicker">🎙️ NUESTRA PROGRAMACIÓN</div>
+          <h2>El ritmo de <span>tus días</span></h2>
+        </div>
+        <p>Entretenimiento, música y compañía para estar siempre cerca de nuestra gente.</p>
       </div>
 
-      <audio id="radioAudio" preload="none" playsinline>
-        <source
-          src="https://stream.zeno.fm/rbuzobunanauv"
-          type="audio/mpeg"
-        >
-        Tu navegador no admite la reproducción de audio.
-      </audio>
+      <div class="program-grid">
+        <article class="program-card">
+          <div class="program-number">01 / MÚSICA</div>
+          <div class="program-art art-morning">☀</div>
+          <div class="program-info">
+            <span class="program-label">ENERGÍA PARA TU DÍA</span>
+            <h3>Buenos días, Yungas</h3>
+            <p>Comienza tu jornada con buena música y toda la alegría de nuestra tierra.</p>
+            <span class="schedule">MÚSICA Y ALEGRÍA</span>
+          </div>
+        </article>
 
-      <p class="player-hint">
-        Si la señal tarda en iniciar, vuelve a pulsar reproducir
-        o revisa tu conexión a internet.
+        <article class="program-card">
+          <div class="program-number">02 / ENTRETENIMIENTO</div>
+          <div class="program-art art-mix">♫</div>
+          <div class="program-info">
+            <span class="program-label">EL SONIDO DE LA MEGA</span>
+            <h3>La Mega Mix</h3>
+            <p>Ritmos para acompañarte en casa, en el trabajo o donde te encuentres.</p>
+            <span class="schedule">RITMO SIN FRONTERAS</span>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <div class="program-number">03 / COMUNIDAD</div>
+          <div class="program-art art-requests">♥</div>
+          <div class="program-info">
+            <span class="program-label">TU VOZ IMPORTA</span>
+            <h3>Saludos y dedicatorias</h3>
+            <p>Comparte tus mensajes y envía saludos a tus familiares y amigos.</p>
+            <a class="text-link" href="https://wa.me/59173214664" target="_blank" rel="noopener noreferrer">ENVIAR UN SALUDO ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="editor-note">
+        La programación y los horarios específicos pueden variar según la emisión de la radio.
       </p>
     </section>
 
-    <section class="features">
-      <article class="feature">
-        <div class="feature-icon">♫</div>
+    <section class="community-band" id="comunidad">
+      <div class="community-inner">
+        <div class="community-icon">♥</div>
         <div>
-          <h3>Buena música</h3>
-          <p>Ritmos para cada momento</p>
+          <div class="section-kicker">LA MEGA ES TUYA</div>
+          <h2>¡Conectados con nuestra gente!</h2>
+          <p>Desde Coroico para cada rincón de Bolivia y el mundo.</p>
         </div>
-      </article>
-
-      <article class="feature">
-        <div class="feature-icon">♥</div>
-        <div>
-          <h3>Cerca de ti</h3>
-          <p>La voz de nuestra comunidad</p>
-        </div>
-      </article>
-
-      <article class="feature">
-        <div class="feature-icon">◎</div>
-        <div>
-          <h3>Desde Coroico</h3>
-          <p>Nor Yungas para el mundo</p>
-        </div>
-      </article>
+        <a class="button button-light" href="https://wa.me/59173214664" target="_blank" rel="noopener noreferrer">
+          ESCRÍBENOS POR WHATSAPP ↗
+        </a>
+      </div>
     </section>
 
-    <section class="contact-section">
-      <h2>Conéctate con La Mega</h2>
-      <p>Estamos cerca de nuestra gente en los Yungas y en todo el mundo.</p>
-      <a
-        href="https://wa.me/59173214664"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="whatsapp-link"
-      >
-        Escríbenos por WhatsApp
-      </a>
+    <section class="news-section section-pad">
+      <div class="section-heading">
+        <div class="section-kicker">🌄 NUESTRA TIERRA</div>
+        <h2>Orgullo de <span>los Yungas</span></h2>
+        <p>Celebramos la cultura, la gente y la identidad que nos une.</p>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-visual news-local"><span>NOR YUNGAS</span><b>🌄</b></div>
+          <div class="news-copy">
+            <span class="news-category">NUESTRA REGIÓN</span>
+            <h3>La belleza de Coroico</h3>
+            <p>Nuestra tierra, sus paisajes y su gente son parte de la identidad que compartimos cada día.</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-visual news-info"><span>COMUNIDAD</span><b>📻</b></div>
+          <div class="news-copy">
+            <span class="news-category">LA VOZ DE TODOS</span>
+            <h3>Siempre cerca de ti</h3>
+            <p>La radio nos conecta, nos acompaña y mantiene viva la comunicación con nuestra comunidad.</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-visual news-culture"><span>CULTURA Y TRADICIÓN</span><b>♫</b></div>
+          <div class="news-copy">
+            <span class="news-category">NUESTRA IDENTIDAD</span>
+            <h3>Tradición que nos une</h3>
+            <p>Compartimos la música, las costumbres y la alegría que hacen especiales a los Yungas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dedication-section section-pad">
+      <div class="dedication-copy">
+        <div class="section-kicker">💌 UN MENSAJE ESPECIAL</div>
+        <h2>Dedica una canción.<br><span>Regala una sonrisa.</span></h2>
+        <p>
+          Haz llegar tus saludos, felicitaciones y dedicatorias a esa persona especial.
+          En La Mega queremos ser parte de tus mejores momentos.
+        </p>
+        <a class="button button-dark" href="https://wa.me/59173214664?text=Hola%20Radio%20La%20Mega%20Yungue%C3%B1a%2C%20quiero%20enviar%20un%20saludo." target="_blank" rel="noopener noreferrer">
+          ENVIAR MI DEDICATORIA ↗
+        </a>
+      </div>
+
+      <div class="dedication-graphic" aria-hidden="true">
+        <div class="heart-disc">♥</div>
+        <div class="dedication-sticker">CON CARIÑO<br><b>LA MEGA</b></div>
+      </div>
+    </section>
+
+    <section class="contact-section section-pad" id="contacto">
+      <div class="section-heading">
+        <div class="section-kicker">📲 HABLEMOS</div>
+        <h2>Conéctate con <span>La Mega</span></h2>
+        <p>Estamos cerca de nuestra gente en los Yungas y en todo el mundo.</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="whatsapp-icon">☏</div>
+        <div class="contact-detail">
+          <span>WHATSAPP DE LA RADIO</span>
+          <strong>+591 73214664</strong>
+          <small>Saludos, mensajes y dedicatorias</small>
+        </div>
+        <a class="button button-whatsapp" href="https://wa.me/59173214664" target="_blank" rel="noopener noreferrer">
+          ESCRÍBENOS ↗
+        </a>
+      </div>
+
+      <div class="contact-topics">
+        <span>♫ Música para todos</span>
+        <span>♥ Cerca de la comunidad</span>
+        <span>◎ Coroico, La Paz, Bolivia</span>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>
-      © <span id="currentYear"></span> Radio La Mega Yungueña 102.1 FM.
-      Coroico, La Paz, Bolivia.
-    </p>
+  <footer class="footer">
+    <div class="footer-main">
+      <a class="footer-brand" href="#inicio">LA MEGA <span>YUNGUEÑA</span></a>
+      <p>Tu compañía, tu música y tu radio desde Coroico, Nor Yungas.</p>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#escuchar">Escuchar</a>
+        <a href="#programas">Programas</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="currentYear">2026</span> Radio La Mega Yungueña 102.1 FM.</span>
+      <span>Coroico, La Paz, Bolivia.</span>
+      <a href="#inicio">VOLVER ARRIBA ↑</a>
+    </div>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const audio = document.getElementById("radioAudio");
-      const playButton = document.getElementById("playButton");
-      const playIcon = document.getElementById("playIcon");
-      const playerTitle = document.getElementById("playerTitle");
-      const playerMessage = document.getElementById("playerMessage");
-      const slider = document.getElementById("volumeSlider");
-      const volumeValue = document.getElementById("volumeValue");
-      const muteButton = document.getElementById("muteButton");
-      const currentYear = document.getElementById("currentYear");
-
-      let previousVolume = 0.7;
-
-      audio.volume = 0.7;
-      currentYear.textContent = new Date().getFullYear();
-
-      function updateVolumeDisplay() {
-        const volume = Math.round(audio.volume * 100);
-        volumeValue.textContent = volume + "%";
-        slider.value = volume;
-
-        if (audio.muted || audio.volume === 0) {
-          muteButton.textContent = "🔇 Activar sonido";
-        } else {
-          muteButton.textContent = "🔊 Silenciar";
-        }
-      }
-
-      playButton.addEventListener("click", async function () {
-        if (audio.paused) {
-          playerTitle.textContent = "Conectando con La Mega...";
-          playerMessage.textContent = "Esperando la señal de radio";
-
-          try {
-            await audio.play();
-          } catch (error) {
-            playerTitle.textContent = "No se pudo conectar";
-            playerMessage.textContent =
-              "Revisa tu conexión e inténtalo nuevamente.";
-          }
-        } else {
-          audio.pause();
-        }
-      });
-
-      audio.addEventListener("playing", function () {
-        playIcon.textContent = "Ⅱ";
-        playButton.setAttribute("aria-label", "Pausar radio");
-        playerTitle.textContent = "¡Estás escuchando La Mega!";
-        playerMessage.textContent = "Radio La Mega Yungueña 102.1 FM";
-      });
-
-      audio.addEventListener("pause", function () {
-        playIcon.textContent = "▶";
-        playButton.setAttribute("aria-label", "Reproducir radio");
-        playerTitle.textContent = "Dale play y vive La Mega";
-        playerMessage.textContent = "Pulsa reproducir para escuchar";
-      });
-
-      audio.addEventListener("waiting", function () {
-        playerMessage.textContent = "Cargando la señal de radio...";
-      });
-
-      audio.addEventListener("error", function () {
-        playerTitle.textContent = "Señal temporalmente no disponible";
-        playerMessage.textContent =
-          "Intenta reproducir nuevamente en unos segundos.";
-      });
-
-      slider.addEventListener("input", function () {
-        audio.volume = Number(slider.value) / 100;
-        audio.muted = false;
-
-        if (audio.volume > 0) {
-          previousVolume = audio.volume;
-        }
-
-        updateVolumeDisplay();
-      });
-
-      muteButton.addEventListener("click", function () {
-        if (audio.muted || audio.volume === 0) {
-          audio.muted = false;
-
-          if (audio.volume === 0) {
-            audio.volume = previousVolume || 0.7;
-          }
-        } else {
-          previousVolume = audio.volume;
-          audio.muted = true;
-        }
-
-        updateVolumeDisplay();
-      });
-
-      updateVolumeDisplay();
-    });
-  </script>
+  <a class="floating-whatsapp" href="https://wa.me/59173214664" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">☏</a>
 </body>
 </html>
 
