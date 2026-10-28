@@ -13,19 +13,17 @@
 
   <div class="topline">
     <span>📍 Coroico · Nor Yungas · La Paz, Bolivia</span>
-    <span class="topline-live"><span class="live-dot"></span> TU RADIO, SIEMPRE CONTIGO</span>
+    <span><i class="live-dot"></i> TRANSMITIENDO EN VIVO</span>
   </div>
 
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Inicio Radio La Mega Yungueña">
+    <a class="brand" href="#inicio">
       <div class="logo-frame">
-        <img
-          src="assets/radio-la-mega-logo.png"
-          alt="Logo de Radio La Mega Yungueña"
-          class="logo"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        >
-        <span class="logo-fallback" aria-hidden="true">MEGA<br><small>102.1 FM</small></span>
+        <img src="radio-la-mega-logo.png"
+             alt="Logo de Radio La Mega Yungueña"
+             class="logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <span class="logo-fallback">MEGA<small>102.1 FM</small></span>
       </div>
       <div class="brand-copy">
         <span class="brand-kicker">LA VOZ DE LOS YUNGAS</span>
@@ -35,23 +33,23 @@
     </a>
 
     <button class="menu-toggle" id="menuToggle" type="button"
-      aria-label="Abrir menú" aria-expanded="false">☰</button>
+            aria-label="Abrir menú" aria-expanded="false">☰</button>
 
     <nav class="nav" id="mainNav">
       <a href="#inicio">Inicio</a>
-      <a href="#escuchar">Escuchar</a>
+      <a href="#escuchar">Escuchar en vivo</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
-    <a class="header-live" href="#escuchar"><span class="live-dot"></span> ESCUCHAR EN VIVO</a>
+    <a class="header-live" href="#escuchar"><i class="live-dot"></i> EN VIVO</a>
   </header>
 
   <main>
     <section class="hero" id="inicio">
       <div class="hero-content">
-        <div class="eyebrow"><span class="live-dot"></span> TRANSMITIENDO DESDE COROICO</div>
-        <h1>Los Yungas<br>se escuchan <span>en La Mega.</span></h1>
+        <div class="eyebrow"><i class="live-dot"></i> DESDE COROICO PARA EL MUNDO</div>
+        <h1>Los Yungas<br>se escuchan<br><span>en La Mega.</span></h1>
         <p class="hero-description">
           Tu música, tu gente y tus raíces. Conectamos a Coroico con los Yungas
           y con todos los corazones que nos escuchan desde cualquier lugar.
@@ -63,14 +61,17 @@
         <div class="hero-location">102.1 FM <span>•</span> COROICO, LA PAZ, BOLIVIA</div>
       </div>
 
-      <div class="hero-art" aria-label="Radio La Mega Yungueña">
+      <div class="hero-art" aria-label="Radio La Mega Yungueña 102.1 FM">
         <div class="art-ring ring-one"></div>
         <div class="art-ring ring-two"></div>
         <div class="art-disc">
           <div class="disc-center">MEGA<span>102.1 FM</span></div>
         </div>
         <div class="art-tag">♫ LA VOZ DE LOS YUNGAS</div>
-        <div class="art-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="art-wave" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
       </div>
     </section>
 
@@ -89,12 +90,12 @@
             <h3 id="playerTitle">Dale play y vive La Mega</h3>
             <p id="playerMessage">Tu radio favorita, donde estés.</p>
           </div>
-          <div class="on-air"><span class="live-dot"></span> EN VIVO</div>
+          <div class="on-air"><i class="live-dot"></i> EN VIVO</div>
         </div>
 
         <div class="player-controls">
           <button id="playButton" class="play-button" type="button"
-            aria-label="Reproducir radio"><span id="playIcon">▶</span></button>
+                  aria-label="Reproducir radio"><span id="playIcon">▶</span></button>
           <div class="controls-copy">
             <strong>Radio La Mega Yungueña</strong>
             <span>102.1 FM · Coroico, Bolivia</span>
@@ -107,7 +108,8 @@
         <div class="volume-control">
           <label for="volumeSlider">VOLUMEN</label>
           <button id="muteButton" class="mute-button" type="button">🔊 Silenciar</button>
-          <input id="volumeSlider" type="range" min="0" max="100" value="70" step="1" aria-label="Nivel de volumen">
+          <input id="volumeSlider" type="range" min="0" max="100"
+                 value="70" step="1" aria-label="Nivel de volumen">
           <span id="volumeValue">70%</span>
         </div>
 
@@ -116,13 +118,27 @@
           Tu navegador no admite la reproducción de audio.
         </audio>
 
-        <p class="player-hint">Si la señal tarda en iniciar, espera unos segundos e inténtalo nuevamente.</p>
+        <p class="player-hint">
+          Si la señal tarda en iniciar, espera unos segundos e inténtalo nuevamente.
+        </p>
       </div>
 
       <div class="listen-perks">
-        <div><span>♫</span><strong>Buena música</strong><p>Ritmos para cada momento</p></div>
-        <div><span>♥</span><strong>Cerca de nuestra gente</strong><p>La voz de nuestra comunidad</p></div>
-        <div><span>◎</span><strong>Desde los Yungas</strong><p>Coroico para todo el mundo</p></div>
+        <article>
+          <span>♫</span>
+          <strong>Buena música</strong>
+          <p>Ritmos para cada momento</p>
+        </article>
+        <article>
+          <span>♥</span>
+          <strong>Cerca de nuestra gente</strong>
+          <p>La voz de nuestra comunidad</p>
+        </article>
+        <article>
+          <span>◎</span>
+          <strong>Desde los Yungas</strong>
+          <p>Coroico para todo el mundo</p>
+        </article>
       </div>
     </section>
 
@@ -130,30 +146,45 @@
       <div>
         <span class="section-kicker">NUESTRA IDENTIDAD</span>
         <h2>De los Yungas para <span>el mundo.</span></h2>
-        <p>Somos parte de tu día, de tus recuerdos y de la alegría de nuestra gente.
-          Gracias por acompañarnos y elegir Radio La Mega Yungueña 102.1 FM.</p>
+        <p>
+          Somos parte de tu día, de tus recuerdos y de la alegría de nuestra gente.
+          Gracias por acompañarnos y elegir Radio La Mega Yungueña 102.1 FM.
+        </p>
       </div>
-      <div class="community-number"><strong>102.1</strong><span>FM · COROICO</span></div>
+      <div class="community-number">
+        <strong>102.1</strong>
+        <span>FM · COROICO</span>
+      </div>
     </section>
 
     <section class="contact-section" id="contacto">
       <span class="section-kicker">ESTAMOS PARA ESCUCHARTE</span>
       <h2>Conéctate con <span>La Mega.</span></h2>
       <p>¿Tienes un saludo, una dedicatoria o quieres comunicarte con nosotros?</p>
-      <a class="whatsapp-link" href="https://wa.me/59173214664"
-        target="_blank" rel="noopener noreferrer">☏ ESCRÍBENOS POR WHATSAPP ↗</a>
+      <a class="whatsapp-link"
+         href="https://wa.me/59173214664"
+         target="_blank" rel="noopener noreferrer">
+        ☎ ESCRÍBENOS POR WHATSAPP ↗
+      </a>
       <p class="contact-location">Coroico · Nor Yungas · La Paz, Bolivia</p>
     </section>
   </main>
 
   <footer class="footer">
-    <a class="footer-brand" href="#inicio">RADIO LA MEGA YUNGUEÑA <span>102.1 FM</span></a>
+    <a class="footer-brand" href="#inicio">
+      RADIO LA MEGA YUNGUEÑA <span>102.1 FM</span>
+    </a>
     <p>La voz de los Yungas, contigo donde estés.</p>
-    <p class="copyright">© <span id="currentYear"></span> Radio La Mega Yungueña. Todos los derechos reservados.</p>
+    <p class="copyright">
+      © <span id="currentYear"></span> Radio La Mega Yungueña.
+      Todos los derechos reservados.
+    </p>
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/59173214664"
-    target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">☏</a>
+  <a class="floating-whatsapp"
+     href="https://wa.me/59173214664"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">☏</a>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -171,20 +202,25 @@
 
       let previousVolume = 0.7;
       audio.volume = previousVolume;
-      document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
 
       function updateVolumeDisplay() {
-        const volume = Math.round(audio.volume * 100);
-        volumeValue.textContent = volume + "%";
-        slider.value = volume;
-        const isMuted = audio.muted || audio.volume === 0;
-        muteButton.textContent = isMuted ? "🔇 Activar sonido" : "🔊 Silenciar";
-        slider.style.accentColor = "#f50078";
+        volumeValue.textContent = Math.round(audio.volume * 100) + "%";
+        slider.value = Math.round(audio.volume * 100);
+        muteButton.textContent =
+          (audio.muted || audio.volume === 0)
+            ? "🔇 Activar sonido"
+            : "🔊 Silenciar";
       }
 
-      function setPlayingState(playing) {
+      function updatePlayback(playing) {
         playIcon.textContent = playing ? "Ⅱ" : "▶";
-        playButton.setAttribute("aria-label", playing ? "Pausar radio" : "Reproducir radio");
+        playButton.setAttribute(
+          "aria-label",
+          playing ? "Pausar radio" : "Reproducir radio"
+        );
         soundBars.classList.toggle("playing", playing);
       }
 
@@ -202,21 +238,22 @@
           await audio.play();
         } catch (error) {
           playerTitle.textContent = "No se pudo iniciar la señal";
-          playerMessage.textContent = "Comprueba tu conexión e inténtalo otra vez.";
-          setPlayingState(false);
+          playerMessage.textContent =
+            "Comprueba tu conexión e inténtalo nuevamente.";
+          updatePlayback(false);
         } finally {
           playButton.disabled = false;
         }
       });
 
       audio.addEventListener("playing", function () {
-        setPlayingState(true);
+        updatePlayback(true);
         playerTitle.textContent = "¡Estás escuchando La Mega!";
         playerMessage.textContent = "Radio La Mega Yungueña 102.1 FM";
       });
 
       audio.addEventListener("pause", function () {
-        setPlayingState(false);
+        updatePlayback(false);
         playerTitle.textContent = "Dale play y vive La Mega";
         playerMessage.textContent = "Pulsa reproducir para escuchar";
       });
@@ -226,33 +263,41 @@
       });
 
       audio.addEventListener("error", function () {
-        setPlayingState(false);
+        updatePlayback(false);
         playerTitle.textContent = "Señal temporalmente no disponible";
-        playerMessage.textContent = "Intenta nuevamente en unos segundos.";
+        playerMessage.textContent =
+          "Intenta nuevamente en unos segundos.";
       });
 
       slider.addEventListener("input", function () {
         audio.volume = Number(slider.value) / 100;
         audio.muted = false;
-        if (audio.volume > 0) previousVolume = audio.volume;
+
+        if (audio.volume > 0) {
+          previousVolume = audio.volume;
+        }
+
         updateVolumeDisplay();
       });
 
       muteButton.addEventListener("click", function () {
         if (audio.muted || audio.volume === 0) {
           audio.muted = false;
-          if (audio.volume === 0) audio.volume = previousVolume || 0.7;
+
+          if (audio.volume === 0) {
+            audio.volume = previousVolume || 0.7;
+          }
         } else {
           previousVolume = audio.volume;
           audio.muted = true;
         }
+
         updateVolumeDisplay();
       });
 
       menuToggle.addEventListener("click", function () {
         const isOpen = mainNav.classList.toggle("nav-open");
         menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
         menuToggle.textContent = isOpen ? "✕" : "☰";
       });
 
@@ -260,7 +305,6 @@
         link.addEventListener("click", function () {
           mainNav.classList.remove("nav-open");
           menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Abrir menú");
           menuToggle.textContent = "☰";
         });
       });
@@ -270,6 +314,7 @@
   </script>
 </body>
 </html>
+
 
 
 
